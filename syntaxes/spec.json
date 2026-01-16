@@ -13,6 +13,14 @@
             "name": "keyword.spec"
         },
         {
+            "match": "%(?:\\{buildroot\\}|buildroot)",
+            "name": "keyword.control.spec"
+        },
+        {
+            "match": "%(?:\\{_[A-Za-z0-9_]*dir\\}|_[A-Za-z0-9_]*dir)",
+            "name": "keyword.control.spec"
+        },
+        {
             "include": "#comments"
         },
         {
@@ -34,16 +42,10 @@
             "include": "#modifiers"
         },
         {
-            "include": "#changelogs"
-        },
-        {
             "include": "#variables"
         },
         {
             "include": "#architectures"
-        },
-        {
-            "include": "#licenses"
         },
         {
             "include": "#constants"
@@ -53,183 +55,6 @@
         }
     ],
     "repository": {
-        "licenses": {
-            "comment": "based on openSUSE Packaging guidelines, see also https://fedoraproject.org/wiki/Licensing:Main?rd=Licensing#SoftwareLicenses",
-            "patterns": [
-                {
-                    "match": "(?:AFL-2.1|AGPL-3.0|AGPL-3.0\\+|Apache-1.1|Apache-2.0)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:X11|xinetd|Zlib|ZPL-2.0|ZPL-2.1)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:Apache-2.0+|APL-1.0|BSD-2-Clause|BSD-3-Clause|BSD-4-Clause)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:Artistic-1.0|Artistic-1.0+|Artistic-2.0|Beerware)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:CC-BY-ND-4.0|CC-BY-SA-2.5|CC-BY-SA-3.0)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:CC-BY-SA-3.0|CC-BY-SA-4.0|CDDL-1.0|CPL-1.0|EPL-1.0)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:ErlPL-1.1|GFDL-1.1|GFDL-1.1\\+|GFDL-1.2|GFDL-1.2\\+|GFDL-1.3)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:GFDL-1.3\\+|GPL-1.0\\+|GPL-2.0|GPL-2.0\\+|GPL-3.0|GPL-3.0\\+|IJG)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:LGPL-2.0\\+|LGPL-2.1|LGPL-2.1\\+|LGPL-3.0\\+|LPPL-1.3c)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:IPA|IPL-1.0|IPL-1.0|ISC|JSON|LGPL-2.0|MakeIndex|MIT)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:MPL-1.0|MPL-1.1|MPL-1.1\\+|MS-PL|NetCDF|OFL-1.1|OLDAP-2.8)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:OSL-1.1|PHP-3.01|Python-2.0|Qhull|QPL-1.0|QPL-1.0|Ruby)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-BSD-3-Clause-with-non-nuclear-addition)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-2.0\\+-with-sane-exception|SUSE-GPL-3.0-with-FLOSS-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-3.0-with-font-exception|SUSE-GPL-3.0-with-openssl-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-3.0-with-template-exception|SUSE-GPL-3.0+-with-autoconf-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-3.0\\+-with-font-exception|SUSE-GPL-3.0\\+-with-openssl-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-IBPL-1.0|SUSE-IDPL-1.0|SUSE-IEEE|SUSE-Innernet-2.0|SUSE-Innernet-2.00)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-LDPL-2.0|SUSE-LGPL-2.0-with-linking-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-LGPL-2.1-with-digia-exception-1.1)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-LGPL-2.1-with-nokia-exception-1.1)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-LGPL-2.1\\+-with-GCC-exception|SUSE-LGPL-3.0-with-openssl-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Liberation|SUSE-Manpages|SUSE-Matplotlib|SUSE-MgOpen|SUSE-mirror)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-mplus|SUSE-NonFree|SUSE-Oasis-Specification-Notice)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-OpenPublication-1.0|SUSE-OldFSFDocLicense|SUSE-Permissive)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Permissive-Modify-By-Patch|SUSE-PHP-2.02|SUSE-Public-Domain)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Python-1.6|SUSE-QWT-1.0|SUSE-Redistributable-Content|SUSE-Repoze)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Scrot|SUSE-Sendmail|SUSE-SGI-FreeB-2.0|SUSE-SIP|SUSE-SLIB)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-SNIA-1.0|SUSE-SNIA-1.1|SUSE-Sun-Laboratories|SUSE-TeX|SUSE-TGPPL-1.0)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Ubuntu-Font-License-1.0|SUSE-Xano|SUSE-Xenonsoft-1.00)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-XFree86-with-font-exception|SUSE-XSL-Lint|TCL|Unicode|Vim|W3C|WTFPL)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Bitstream-Vera|OML|OPL-1.0|SUSE-Arphic)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-BSD-Mark-Modifications|SUSE-CacertRoot)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Copyleft-Next-0.3.0|SUSE-CPL-0.5|SUSE-Curb|SUSE-DMTF)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Docbook-XSL|SUSE-Egenix-1.1.0|SUSE-EULA|SUSE-FHS)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Firmware|SUSE-FLTK|SUSE-Free-Art-1.3|SUSE-Freetype)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-Gitslave|SUSE-GL2PS-2.0|SUSE-Gnuplot)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-2.0-with-FLOSS-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-CC-Sampling-Plus-1.0|SUSE-GPL-2.0-with-linking-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-2.0-with-openssl-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-2.0-with-OSI-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-2.0-with-plugin-exception)",
-                    "name": "constant.language.spec"
-                },
-                {
-                    "match": "(?:SUSE-GPL-2.0\\+-with-openssl-exception)",
-                    "name": "constant.language.spec"
-                }
-            ]
-        },
         "architectures": {
             "patterns": [
                 {
@@ -257,11 +82,11 @@
                     "name": "keyword.spec"
                 },
                 {
-                    "match": "^(?:Requires\\((?:preun|postun|pre|post)\\)|Requires):",
+                    "match": "^(?:Requires(?:\\((?:interp|preun|postun|pre|post|rpmlib|verify)\\))?|Requires):",
                     "name": "keyword.spec"
                 },
                 {
-                    "match": "^(Enhances|Suggests|BuildConflicts|BuildRequires|Recommends):",
+                    "match": "^(Enhances|Suggests|BuildConflicts|BuildRequires(?:\\((?:pre|prep|build|install|clean)\\))?|Recommends):",
                     "name": "keyword.spec"
                 },
                 {
@@ -281,7 +106,7 @@
                     "name": "keyword.spec"
                 },
                 {
-                    "match": "^(Name|Version|Release|Url|URL):",
+                    "match": "^(Name|Version|Release|Url|URL|VCS|Vcs):",
                     "name": "keyword.spec"
                 },
                 {
@@ -303,18 +128,8 @@
                     ]
                 },
                 {
-                    "begin": "^(License:)[ \\t]*",
-                    "end": "$",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.spec"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "include": "#licenses"
-                        }
-                    ]
+                    "match": "^(License:)",
+                    "name": "keyword.spec"
                 }
             ]
         },
@@ -322,7 +137,31 @@
             "comment": "see https://en.opensuse.org/openSUSE:Packaging_Conventions_RPM_Macros, see https://fedoraproject.org/wiki/How_to_create_an_RPM_package",
             "patterns": [
                 {
+                    "match": "%(?:\\{buildroot\\}|buildroot)",
+                    "name": "keyword.control.spec"
+                },
+                {
+                    "match": "%(?:\\{_[A-Za-z0-9_]*dir\\}|_[A-Za-z0-9_]*dir)",
+                    "name": "keyword.control.spec"
+                },
+                {
                     "match": "^(%(?:setup|patch[0-9]*|configure|autosetup))",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.spec"
+                        }
+                    }
+                },
+                {
+                    "match": "^[ \\t]*(%(?:configure|autoreconf|make|make_build|make_install|makeinstall_std|cmake|meson(?:_build|_install|_test)?))\\b",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.spec"
+                        }
+                    }
+                },
+                {
+                    "match": "^(%(?:meson(?:_build|_install|_test)?))",
                     "captures": {
                         "1": {
                             "name": "support.function.spec"
@@ -420,7 +259,8 @@
                             "name": "entity.name.section.spec"
                         }
                     },
-                    "end": "$",
+                    "contentName": "comment.block.spec",
+                    "end": "\\z",
                     "patterns": [
                         {
                             "include": "#changelogs"
@@ -456,11 +296,11 @@
                     ]
                 },
                 {
-                    "match": "^%(?:triggerin|triggerpostun|triggerun|trigger) --",
+                    "match": "^%(?:triggerin|triggerpostun|triggerun|trigger)(?:\\s+-n\\s+\\S+)?\\s+--",
                     "name": "entity.name.section.spec"
                 },
                 {
-                    "begin": "^(%(?:preun|prep|pre|postun|post|packagepreun))",
+                    "begin": "^(%(?:preun|prep|pre|postun|post|verifyscript|packagepreun|post(?:_\\w+)+|pre(?:_\\w+)+))",
                     "beginCaptures": {
                         "1": {
                             "name": "entity.name.section.spec"
@@ -499,13 +339,7 @@
                     "include": "#variables"
                 },
                 {
-                    "include": "#licenses"
-                },
-                {
                     "include": "#constants"
-                },
-                {
-                    "include": "#shell_syntax"
                 }
             ]
         },
@@ -529,7 +363,7 @@
             "patterns": [
                 {
                     "match": "[0-9]+",
-                    "name": "contstant.numeric.spec"
+                    "name": "constant.numeric.spec"
                 }
             ]
         },
@@ -621,6 +455,14 @@
         "variables": {
             "patterns": [
                 {
+                    "match": "%(?:\\{buildroot\\}|buildroot)",
+                    "name": "support.constant.spec"
+                },
+                {
+                    "match": "%(?:\\{_[A-Za-z0-9_]*dir\\}|_[A-Za-z0-9_]*dir)",
+                    "name": "support.constant.spec"
+                },
+                {
                     "match": "(%\\{with) ([a-zA-Z_][a-zA-Z0-9_:]*)(\\})",
                     "captures": {
                         "1": {
@@ -707,12 +549,24 @@
                     "name": "storage.modifier.spec"
                 },
                 {
-                    "match": "^(%config(?:\\(noreplace\\))?)[ \\t]+",
+                    "match": "^%(?:def_(?:disable|enable|with|without))",
+                    "name": "storage.modifier.spec"
+                },
+                {
+                    "match": "(%config(?:\\([^)]*\\))?)[ \\t]+",
                     "captures": {
                         "1": {
                             "name": "storage.modifier.spec"
                         }
                     }
+                },
+                {
+                    "match": "^%exclude\\b",
+                    "name": "storage.modifier.spec"
+                },
+                {
+                    "match": "%(?:ghost|dir)\\b",
+                    "name": "storage.modifier.spec"
                 },
                 {
                     "match": "^(%defattr\\(.*\\))",
@@ -738,28 +592,120 @@
                         }
                     }
                 }
-            ],
-            "conditionals": {
-                "patterns": [
-                    {
-                        "match": "%(?:ifarch|ifnarch|ifnos|ifos|if|else|endif)",
-                        "name": "keyword.control.spec"
-                    }
-                ]
-            },
-            "shell_syntax": {
-                "comment": "Set disabled to 1 to turn off syntax highlight of shellcode",
-                "disabled": 0,
-                "patterns": [
-                    {
-                        "include": "source.shell"
-                    }
-                ]
-            }
+            ]
+        },
+        "conditionals": {
+            "patterns": [
+                {
+                    "match": "%(?:ifarch|ifnarch|ifnos|ifos|if(?:_enabled|_disabled|_with|_without)?|else|endif)",
+                    "name": "keyword.control.spec"
+                }
+            ]
+        },
+        "changelog_tokens": {
+            "patterns": [
+                {
+                    "match": "\\b(?:CVE|CAN)-\\d{4}-\\d{4,}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\bOVE-\\d{8}-\\d{4}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\bBDU:\\d{4}-\\d{5}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\bMFSA-\\d{4}-\\d{2}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\b\\w*#\\d+\\b",
+                    "name": "constant.numeric.changelogs"
+                }
+            ]
         },
         "changelogs": {
             "comment": "Set disabled to 1 to turn off syntax highlight of logs",
             "patterns": [
+                {
+                    "begin": "^[ \\t]*[-+]\\s+",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "comment.changelogs"
+                        }
+                    },
+                    "end": "$",
+                    "patterns": [
+                        {
+                            "include": "#changelog_tokens"
+                        }
+                    ]
+                },
+                {
+                    "begin": "^[ \\t]+\\S.*$",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "comment.changelogs"
+                        }
+                    },
+                    "end": "$",
+                    "patterns": [
+                        {
+                            "include": "#changelog_tokens"
+                        }
+                    ]
+                },
+                {
+                    "match": "^\\*\\s+([A-Za-z]{3}\\s+[A-Za-z]{3}\\s+\\d{1,2}\\s+\\d{4})\\s+([^<]+)\\s+(<[^>]+>)\\s+(\\d+:[0-9A-Za-z._+~-]+-[0-9A-Za-z._+~-]+)\\s*$",
+                    "captures": {
+                        "1": {
+                            "name": "constant.changelogs"
+                        },
+                        "2": {
+                            "name": "entity.name.changelogs"
+                        },
+                        "3": {
+                            "name": "variable.other.changelogs"
+                        },
+                        "4": {
+                            "name": "constant.numeric.changelogs"
+                        }
+                    }
+                },
+                {
+                    "match": "<[a-zA-Z0-9._-]+@[^>]+>",
+                    "name": "variable.other.changelogs"
+                },
+                {
+                    "match": "\\b(?:CVE|CAN)-\\d{4}-\\d{4,}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\bOVE-\\d{8}-\\d{4}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\bBDU:\\d{4}-\\d{5}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\bMFSA-\\d{4}-\\d{2}\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\b\\w*#\\d+\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\b\\d+:[0-9A-Za-z._+~-]+-[0-9A-Za-z._+~-]+\\b",
+                    "name": "constant.numeric.changelogs"
+                },
+                {
+                    "match": "\\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s+\\d{1,2}(?:\\s+\\d{2}:\\d{2}:\\d{2}\\s+[A-Z]+)?\\s+\\d{4}\\b",
+                    "name": "constant.changelogs"
+                },
                 {
                     "match": "^[*+=-]{30}[+==-]*",
                     "name": "entity.section.name.changelogs"
