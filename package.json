@@ -21,9 +21,6 @@
         "Programming Languages",
         "Linters"
     ],
-    "activationEvents": [
-        "onLanguage:rpm-spec"
-    ],
     "main": "./out/src/extension.js",
     "contributes": {
         "languages": [
