@@ -2,6 +2,7 @@ import * as cp from 'child_process';
 import * as path from 'path';
 import * as rl from 'readline';
 import * as vscode from 'vscode';
+import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient/node';
 
 const MODE = {
     language: 'rpm-spec',
@@ -14,6 +15,7 @@ const SEVERITY = {
 };
 
 let diagnostics: vscode.DiagnosticCollection;
+let lspClient: LanguageClient | undefined;
 
 interface RPMLintContext {
     path: string;
@@ -119,9 +121,19 @@ function lint(document: vscode.TextDocument) {
     });
 }
 
+function checkLspAvailable(serverPath: string, options: cp.SpawnOptions): Promise<boolean> {
+    return new Promise((resolve) => {
+        cp.spawn(serverPath, ['--help'], options)
+            .on('exit', () => resolve(true))
+            .on('error', () => resolve(false));
+    });
+}
+
 export function activate(context: vscode.ExtensionContext) {
     const sanityContext = getSanityContext();
     const config = vscode.workspace.getConfiguration('rpmspec');
+    const lspEnabled = config.get<boolean>('lsp', true);
+    const lspPath = config.get<string>('lspPath', 'rpm_lsp_server');
 
     checkSanity(sanityContext).then((exitCode) => {
         if (!exitCode && config.get<boolean>('lint', true)) {
@@ -137,6 +149,44 @@ export function activate(context: vscode.ExtensionContext) {
             context.subscriptions.push(diagnostics);
         }
     });
+
+    if (!lspEnabled) {
+        return;
+    }
+
+    checkLspAvailable(lspPath, sanityContext.options).then((available) => {
+        if (!available) {
+            return;
+        }
+
+        const cwd = typeof sanityContext.options.cwd === 'string' ? sanityContext.options.cwd : undefined;
+        const serverOptions: ServerOptions = {
+            command: lspPath,
+            args: ['--stdio'],
+            options: {
+                cwd,
+                env: sanityContext.options.env
+            }
+        };
+
+        const clientOptions: LanguageClientOptions = {
+            documentSelector: [{ language: MODE.language, scheme: MODE.scheme }]
+        };
+
+        lspClient = new LanguageClient(
+            'rpm-spec-lsp',
+            'RPM Spec Language Server',
+            serverOptions,
+            clientOptions
+        );
+
+        lspClient.start();
+        context.subscriptions.push(lspClient);
+    });
 }
 
-export function deactivate() { }
+export function deactivate() {
+    if (lspClient) {
+        void lspClient.stop();
+    }
+}

@@ -58,6 +58,18 @@
                     "default": "rpmlint",
                     "description": "Path to 'rpmlint' command",
                     "scope": "machine"
+                },
+                "rpmspec.lsp": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable RPM spec language server (rpm_lsp_server)",
+                    "scope": "machine"
+                },
+                "rpmspec.lspPath": {
+                    "type": "string",
+                    "default": "rpm_lsp_server",
+                    "description": "Path to 'rpm_lsp_server' command",
+                    "scope": "machine"
                 }
             }
         }
@@ -80,5 +92,7 @@
             "semver": "^5.7.2"
         }
     },
-    "dependencies": {}
+    "dependencies": {
+        "vscode-languageclient": "^9.0.1"
+    }
 }
