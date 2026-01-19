@@ -371,83 +371,11 @@
             "comment": "see http://www.zarb.org/~jasonc/macros.php",
             "patterns": [
                 {
-                    "match": "^%__(?:aclocal|ar|as|autoconf)",
+                    "match": "^%__[_A-Za-z0-9]+",
                     "name": "invalid.deprecated.spec"
                 },
                 {
-                    "match": "^%__(?:autoheader|automake|awk)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:bzip2|bzip|cat|cc|chgrp_Rhf|chgrp)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:chmod|chown_Rhf|chown|cpio|cp)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:cpp|cxx|grep|gzip|patch)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:id_u|id|install|ld|libtoolize)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:ln_s|make|mkdir_p|mkdir|mv)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:nm|objcopy|objdump|perl)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:pgp|prelink_undo_cmd|python)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%__(?:ranlib|rm|sed|strip|tar|unzip)",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:aclocal|ar|as|autoconf)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:autoheader|automake|awk)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:bzip2|bzip|cat|cc|chgrp_Rhf|chgrp)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:chmod|chown_Rhf|chown|cpio|cp)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:cpp|cxx|grep|gzip|patch)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:id_u|id|install|ld|libtoolize)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:ln_s|make|mkdir_p|mkdir|mv)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:nm|objcopy|objdump|perl)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:pgp|prelink_undo_cmd|python)\\}",
-                    "name": "invalid.deprecated.spec"
-                },
-                {
-                    "match": "^%\\{__(?:ranlib|rm|sed|strip|tar|unzip)\\}",
+                    "match": "^%\\{__[_A-Za-z0-9]+\\}",
                     "name": "invalid.deprecated.spec"
                 }
             ]
