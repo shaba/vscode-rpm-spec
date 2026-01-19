@@ -14,11 +14,11 @@
         },
         {
             "match": "%(?:\\{buildroot\\}|buildroot)",
-            "name": "variable.other.macro.spec"
+            "name": "variable.language.spec"
         },
         {
             "match": "%(?:\\{_[A-Za-z0-9_]*dir\\}|_[A-Za-z0-9_]*dir)",
-            "name": "variable.other.macro.spec"
+            "name": "variable.language.spec"
         },
         {
             "include": "#comments"
@@ -138,11 +138,11 @@
             "patterns": [
                 {
                     "match": "%(?:\\{buildroot\\}|buildroot)",
-                    "name": "variable.other.macro.spec"
+                    "name": "variable.language.spec"
                 },
                 {
                     "match": "%(?:\\{_[A-Za-z0-9_]*dir\\}|_[A-Za-z0-9_]*dir)",
-                    "name": "variable.other.macro.spec"
+                    "name": "variable.language.spec"
                 },
                 {
                     "match": "^(%(?:setup|patch[0-9]*|configure|autosetup))",
@@ -384,11 +384,11 @@
             "patterns": [
                 {
                     "match": "%(?:\\{buildroot\\}|buildroot)",
-                    "name": "variable.other.macro.spec"
+                    "name": "variable.language.spec"
                 },
                 {
                     "match": "%(?:\\{_[A-Za-z0-9_]*dir\\}|_[A-Za-z0-9_]*dir)",
-                    "name": "variable.other.macro.spec"
+                    "name": "variable.language.spec"
                 },
                 {
                     "match": "(%\\{with) ([a-zA-Z_][a-zA-Z0-9_:]*)(\\})",
@@ -474,11 +474,11 @@
             "patterns": [
                 {
                     "match": "^%(?:define|global|undefine|docdir|doc|license)",
-                    "name": "storage.modifier.spec"
+                    "name": "keyword.control.directive.spec"
                 },
                 {
                     "match": "%(?:def_(?:disable|enable|with|without))\\b",
-                    "name": "storage.modifier.spec"
+                    "name": "keyword.control.directive.spec"
                 },
                 {
                     "match": "(%config(?:\\([^)]*\\))?)[ \\t]+",
