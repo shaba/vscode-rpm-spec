@@ -86,7 +86,7 @@
                     "name": "keyword.spec"
                 },
                 {
-                    "match": "^(Enhances|Suggests|BuildConflicts|BuildRequires(?:\\((?:pre|prep|build|install|clean)\\))?|Recommends):",
+                    "match": "^(Enhances|Suggests|BuildConflicts|BuildRequires(?:\\((?:pre|prep|build|install|clean)\\))?|BuildPreReq|Recommends):",
                     "name": "keyword.spec"
                 },
                 {
