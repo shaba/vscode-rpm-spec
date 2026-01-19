@@ -477,7 +477,7 @@
                     "name": "storage.modifier.spec"
                 },
                 {
-                    "match": "^%(?:def_(?:disable|enable|with|without))",
+                    "match": "%(?:def_(?:disable|enable|with|without))\\b",
                     "name": "storage.modifier.spec"
                 },
                 {
@@ -526,7 +526,7 @@
             "patterns": [
                 {
                     "match": "%(?:ifarch|ifnarch|ifnos|ifos|if(?:_enabled|_disabled|_with|_without)?|else|endif)",
-                    "name": "keyword.control.spec"
+                    "name": "keyword.control.conditional.spec"
                 }
             ]
         },
