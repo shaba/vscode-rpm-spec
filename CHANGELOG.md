@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.4] - 2026-01-20
+- Add optional RPM spec language server
+
 ## [0.3.3] - 2026-01-19
 - Refine macro highlighting scopes so %global/%def_* and %if* stand out from metadata keys.
 - Highlight %__ macros as deprecated and simplify their matching rules.
