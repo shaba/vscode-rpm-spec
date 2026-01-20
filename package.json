@@ -81,8 +81,6 @@
     "devDependencies": {
         "@types/node": ">=20",
         "@types/vscode": ">=1.100.0",
-        "@vscode/vsce": "^3.7.1",
-        "ovsx": "^0.10.8",
         "typescript": "^5.9.3"
     },
     "overrides": {
